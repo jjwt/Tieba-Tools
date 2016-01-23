@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}{{ username }} -- {% endblock %}
+{% block head %}
+        <script src="/static/js/homepage.js"  charset="utf-8"></script>
+{% endblock %}
+{% block body %}
+<div class="container bs-docs-container">
+    
+    <div id="header" class="row">
+        <div class="col-md-2 col-md-offset-10">
+            <ol class="breadcrumb" id="breadcrumb">
+                <li>{{ username }}</li>
+                <!--<li><a href="#">首页</a></li>-->
+                <li><a href="/logout">退出</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="leftside" class="col-md-3">
+            <div class="module">
+                <div class="list-group">
+                    <a class="list-group-item active" href="#" onclick="ch_active(this);return load_utils('tbuser');">首页</a>
+                    <a id="sign_get" class="list-group-item" href="#" onclick="ch_active(this);return load_utils('sign');">签到</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="rightside" class="col-md-9">
+            <div id="subutils">
+                this is subutils panel
+            </div>
+            <div id="message"></div>
+            <div id="content">
+                this is content
+            </div>
+        </div>
+    </div>
+{% endblock %}

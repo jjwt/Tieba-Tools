@@ -1,0 +1,8 @@
+git+https://git.oschina.net/jjwt/Tbtools#egg=Tbtools
+Flask==0.10.1
+Flask-SQLAlchemy==2.1
+celery[redis]
+
+#just used for developement enviroment
+neovim
+ipython==4.0.1
