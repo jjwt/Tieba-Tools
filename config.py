@@ -46,12 +46,13 @@ CELERYBEAT_SCHEDULE = {
     },
     'daily_sign': {
         'task': 'TiebaTools.tasks.daily_sign',
-        'schedule': crontab(minute='30', hour='0'),
+        'schedule': crontab(minute=30, hour=0),
     },
 }
 
 # routing tasks, see
 # http://docs.celeryproject.org/en/latest/userguide/routing.html
+'''
 CELERY_DEFAULT_QUEUE = 'default'
 CELERY_QUEUES = (
     Queue('default', Exchange('default'), routing_key='default'),
@@ -60,3 +61,4 @@ CELERY_QUEUES = (
 CELERY_ROUTES = {
     'TiebaTools.tasks.daily_sign': {'queue': 'daily_sign'},
 }
+'''

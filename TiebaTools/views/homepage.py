@@ -4,6 +4,7 @@ from flask import Blueprint, render_template, current_app
 from ..decorators import de_check_token
 from math import ceil
 from ..models import Tbuser
+from ..tasks import daily_sign
 
 homepage = Blueprint('homepage', __name__)
 
@@ -49,3 +50,8 @@ def page_user_com(tmpfile='layout.html', **kwargs):
     data_dict.update(**kwargs)
     # return 'hello world'
     return render_template(tmpfile, **data_dict)
+
+
+# @homepage.before_app_first_request
+def do_on_startup():
+    daily_sign.delay()

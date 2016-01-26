@@ -8,7 +8,7 @@ from .views.auth import auth
 from .views.tbuser import tbuser
 from .views.tblist import tblist
 from .views.sign import sign
-from .tasks import cel, daily_sign
+from .tasks import cel
 
 
 app = Flask(__name__, instance_relative_config=True)
@@ -31,7 +31,6 @@ class ContextTask(TaskBase):
             return TaskBase.__call__(self, *args, **kwargs)
 
 cel.Task = ContextTask
-daily_sign.delay()
 
 # register blueprint
 app.register_blueprint(homepage)

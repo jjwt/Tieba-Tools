@@ -40,3 +40,6 @@ root of project, and a file named `config.py` in `instance` directory.
 Then put what you want to customize in it.
 When application starts, it will get all-uppercase vars of 'config.py'
 and 'instance/config.py' as config of application Sequentially. 
+
+todo
+TiebaTools/static/js/sign.js
